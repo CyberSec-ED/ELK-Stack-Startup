@@ -1,2 +1,2 @@
 # ELK-Stack-Startup
-Instructions for creating and installing an ELK Stack server on Azure.
+Instructions for creating an ELK Stack server on Azure.
