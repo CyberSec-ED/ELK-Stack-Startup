@@ -52,9 +52,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1/24          |
+| Jump Box | Yes/No              | 40.88.14.48          |
 | Web 1    | No                  | 10.0.0.4             |
 | Web 2    | No                  | 10.0.0.4             |
+| ELK      | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
@@ -92,7 +93,6 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the [install-elk](Ansible/install-elk.yml) file to `/etc/ansible`.
-  -Run the `curl` option to download the file. `curl https://github.com/cybersecEdward/ELK-Stack-Startup/blob/3f8cb6487ca738068a44dbae0b22aa72476f4acd/Ansible/install-elk.yml`
+- Copy the [install-elk](Ansible/install-elk.yml) file to `/etc/ansible`. Run the `curl` option to download the file: `curl https://github.com/cybersecEdward/ELK-Stack-Startup/blob/3f8cb6487ca738068a44dbae0b22aa72476f4acd/Ansible/install-elk.yml`
 - Update the `host` file located in `/etc/ansible` by using `nano` to edit and add an `[elk]` group with corresponding IP address of your control node VM. Make sure the `[elk]` group and `[webservers]` group (should include IP addresses of server VM's) are separate.
-- Run the playbook, and navigate to http://[your.ELK-VM.External.IP]:5601/app/kibana to check that the installation worked as expected.
+- Run the playbook, and navigate to `http://[your.ELK-VM.External.IP]:5601/app/kibana` to check that the installation worked as expected.
